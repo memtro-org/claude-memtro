@@ -1,0 +1,13 @@
+{
+  "name": "memtro",
+  "description": "Memtro for Claude Code.",
+  "owner": { "name": "Memtro", "url": "https://www.memtro.com" },
+  "plugins": [
+    {
+      "name": "memtro",
+      "source": "./",
+      "description": "Your company's memory and connected systems as Claude Code tools.",
+      "category": "productivity"
+    }
+  ]
+}

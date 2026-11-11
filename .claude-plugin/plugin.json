@@ -1,0 +1,47 @@
+{
+  "name": "memtro",
+  "displayName": "Memtro",
+  "version": "0.1.0",
+  "description": "Your company's memory and connected systems as Claude Code tools: search what the team knows and decided, query connected systems, and save decisions back.",
+  "author": {
+    "name": "Memtro",
+    "url": "https://www.memtro.com"
+  },
+  "homepage": "https://www.memtro.com/docs/guide-claude-code/",
+  "documentationUrl": "https://www.memtro.com/docs/guide-claude-code/",
+  "privacyPolicyUrl": "https://www.memtro.com/privacy/",
+  "termsOfServiceUrl": "https://www.memtro.com/terms/",
+  "repository": "https://github.com/memtro-org/claude-memtro",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "mcp",
+    "knowledge",
+    "connectors",
+    "memtro"
+  ],
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "Memtro API key",
+      "description": "A personal key (sk-memtro-…) from platform.memtro.com → Dashboard → Profile → API keys. It acts as you: your memory, connections and permissions.",
+      "sensitive": true,
+      "required": true
+    },
+    "base_url": {
+      "type": "string",
+      "title": "Memtro address",
+      "description": "Leave as is for hosted Memtro; change it only for a self-hosted installation.",
+      "default": "https://platform.memtro.com"
+    }
+  },
+  "mcpServers": {
+    "memtro": {
+      "type": "http",
+      "url": "${user_config.base_url}/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_key}"
+      }
+    }
+  }
+}
